@@ -1,38 +1,105 @@
-.App {
+.grid-container, .op-container, .calulator-pad {
+  display: grid;
+  grid-gap: 10px 10px;
+  margin: 5px;
+}
+
+.grid-container {
+  grid-template-columns: auto auto auto;
+}
+
+.op-container {
+  grid-template-columns: auto;
+}
+
+.calulator-pad {
+  grid-template-columns: auto 100px;
+}
+
+.key-button {
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
   text-align: center;
+  cursor: pointer;
+  min-width: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.key-button:active {
+  background: darkgray;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.display-container {
+  margin: 10px;
+  text-align: right;
+  padding: 20px 10px;
+  font-size: 25px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.calculator-container {
+  top: 100px;
+  position: relative;
+  width: 500px;
+  margin: auto;
+  text-align: right;
+}
+.calculator {
+  border: 1px solid gray;
 }
 
-.App-link {
-  color: #61dafb;
+.switch-scientific {
+  grid-column-start: 2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.light-theme .key-button {
+   background-color: #f0f0f0;
+}
+
+.dark-theme .key-button {
+  background-color: #666;
+}
+
+.dark-theme {
+  background-color: #000;
+  color: #fff
+}
+
+.app {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.theme-selector {
+  margin-bottom: 20px;
+  border: 2px solid gray;
+  display: inline-block;
+  cursor: pointer;
+  right: 0px;
+}
+
+.theme-selector span {
+  display: inline-block;
+  padding: 10px;
+}
+
+.theme-selector span:first-child {
+  border-right: 1px solid gray;
+}
+
+.dark-theme .theme-selector .inactive {
+  background-color: #fff;
+  color: #000;
+}
+
+.light-theme .theme-selector .inactive {
+  background-color: #000;
+  color: #fff;
+}
+
+.light-theme .theme-selector {
+  
 }
